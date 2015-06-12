@@ -25,12 +25,12 @@ class messagelcd
         {
             $ip = tools::getIpLocale();
             $lcd = new lcd();
-            $lcd->message("Raspberry PI 2\n".$ip);
+            $lcd->message($argv[1]);
         }
         else
         {
             //var_dump('sudo php '.__FILE__.' "'.(isset($_REQUEST['q'])?$_REQUEST['q']:'salut').'"');
-            exec('sudo php '.__FILE__.' "'.(isset($_REQUEST['q'])?$_REQUEST['q']:'salut').'"', $a);
+            exec('sudo php '.__FILE__.' "'.(isset($_REQUEST['q'])?$_REQUEST['q']:'').'"', $a);
             echo '<pre>';var_dump($a);
         
         }
